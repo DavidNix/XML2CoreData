@@ -10,8 +10,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
  */
 
-#import "ParseOperation.h"
-#import "SSCHAppDelegate.h"
+#import "DNParseOperation.h"
+#import "DNAppDelegate.h"
 
 // NSNotifications
 NSString *kDidBeginParsing = @"DidBeginParsing";
