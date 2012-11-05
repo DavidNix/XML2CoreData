@@ -132,9 +132,9 @@ NSString *kParseOperationMsgErrorKey = @"ParseOperationMsgErrorKey";
     // not desirable because it gives less control over the network, particularly in responding to
     // connection errors.
     //
-    operationParser = [[NSXMLParser alloc] initWithData:self.parseData];
-    [operationParser setDelegate:self];
-    [operationParser parse];
+    xmlParser = [[NSXMLParser alloc] initWithData:self.parseData];
+    [xmlParser setDelegate:self];
+    [xmlParser parse];
     
     // depending on the total number of objects parsed, the last batch might not have been a
     // "full" batch, and thus not been part of the regular batch transfer. So, we check the count of
@@ -152,10 +152,10 @@ NSString *kParseOperationMsgErrorKey = @"ParseOperationMsgErrorKey";
     
     self.currentParsedCharacterData = nil;
     
-    if (![self isCancelled] && [operationParser parserError] == nil)
+    if (![self isCancelled] && [xmlParser parserError] == nil)
         [self performSelectorOnMainThread:@selector(postNotificationOfParsingStatus:) withObject:KDidFinishParsing waitUntilDone:YES];
     
-    [operationParser release];
+    [xmlParser release];
 }
 
 - (void)dealloc {
@@ -198,7 +198,7 @@ static NSString *kNoRelationship = @"noRelationship";
                                        qualifiedName:(NSString *)qName
                                           attributes:(NSDictionary *)attributeDict {
     
-    if ([self isCancelled]) [operationParser abortParsing];
+    if ([self isCancelled]) [xmlParser abortParsing];
     
 #ifdef DEBUG
     NSLog(@"starting element %@", elementName);
@@ -267,7 +267,7 @@ static NSString *kNoRelationship = @"noRelationship";
                                       namespaceURI:(NSString *)namespaceURI
                                      qualifiedName:(NSString *)qName {
     
-    if ([self isCancelled]) [operationParser abortParsing];
+    if ([self isCancelled]) [xmlParser abortParsing];
     
     // Stop accumulating parsed character data. We won't start again until specific elements begin.
     accumulatingParsedCharacterData = NO;
@@ -355,7 +355,7 @@ static NSString *kNoRelationship = @"noRelationship";
 //
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
     
-    if ([self isCancelled]) [operationParser abortParsing];
+    if ([self isCancelled]) [xmlParser abortParsing];
     
     if (accumulatingParsedCharacterData) {
         // If the current element is one whose content we care about, append 'string'

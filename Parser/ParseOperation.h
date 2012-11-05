@@ -22,7 +22,7 @@ extern NSString *kParseOperationMsgErrorKey;
     
     NSArray *entities;
     
-    NSXMLParser *operationParser;
+    NSXMLParser *xmlParser;
     
     BOOL abortSaving;
 }
