@@ -211,7 +211,7 @@ static NSString *kNoRelationship = @"noRelationship";
         currentManagedObject = [[self.objectHierarchy lastObject] valueForKey:kChildEntity];
     }
     
-    //if an entity
+    // if the elementName of the XML matches a Core Data entity
     if ([self string:elementName isInArrayOfEntities:entities]) {
         
         // insert new entities as we discover them
@@ -242,15 +242,16 @@ static NSString *kNoRelationship = @"noRelationship";
         [newManagedObject release];
     }
     
-    //if an attribute
+    // if the elementName of the XML matches a Core Data attribute
+    // start accumulating the inner text of that XML element
     else if (currentManagedObject && [self string:elementName isAttributeForManagedObject:currentManagedObject]) {
-        //NSLog(@"element is an attribute");
+    
         accumulatingParsedCharacterData = YES;
         [currentParsedCharacterData setString:@""];
     }
     
     
-    //if a relationship
+    // if the elementName of the XML matches a Core Data relationship
     else if (currentManagedObject && [self string:elementName isRelationshipForManagedObject:currentManagedObject]) {
         #ifdef DEBUG
         NSLog(@"CREATING NEW RELATIONSHIP:  setting currentRelationship to %@ mutableSetValueForKey %@.", [[currentManagedObject entity] name], elementName);
