@@ -72,10 +72,9 @@ NSString *kParseOperationMsgErrorKey = @"ParseOperationMsgErrorKey";
             
             NSLog(@"%@ unable to save with error:  %@", NSStringFromClass([self class]), error);
             
-            [[[[UIAlertView alloc]
+            [[[UIAlertView alloc]
                initWithTitle:@"Unable to Save" message:@"Unable to save downloaded data. Data you are viewing may be inaccurate. Try resetting the database in Settings." 
                delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil]
-              autorelease]
              show];
             
             abortSaving = YES;
@@ -121,7 +120,7 @@ NSString *kParseOperationMsgErrorKey = @"ParseOperationMsgErrorKey";
     managedObjectContext = [[NSManagedObjectContext alloc] init];
     [self.managedObjectContext setUndoManager:nil];
     
-    SSCHAppDelegate *appDelegate = (SSCHAppDelegate *)[[UIApplication sharedApplication] delegate];
+    DNAppDelegate *appDelegate = (DNAppDelegate *)[[UIApplication sharedApplication] delegate];
     [self.managedObjectContext setPersistentStoreCoordinator:appDelegate.persistentStoreCoordinator];
     
     entities = [[appDelegate.managedObjectModel entities] retain];
@@ -159,21 +158,6 @@ NSString *kParseOperationMsgErrorKey = @"ParseOperationMsgErrorKey";
     
     if (![self isCancelled] && [xmlParser parserError] == nil)
         [self performSelectorOnMainThread:@selector(postNotificationOfParsingStatus:) withObject:KDidFinishParsing waitUntilDone:YES];
-    
-    [xmlParser release];
-}
-
-- (void)dealloc {
-    [parseData release];
-    
-    [currentParsedCharacterData release];
-    
-    [managedObjectContext release];
-    [objectHierarchy release];
-    [entities release];
-    [allInsertedObjects release];
-    
-    [super dealloc];
 }
 
 
@@ -244,7 +228,6 @@ static NSString *kNoRelationship = @"noRelationship";
                                                                            forKeys:[NSArray arrayWithObjects:kParentEntity, kChildEntity, kRelationship, nil]];
         [self.objectHierarchy addObject:trackingDictionary];
         
-        [newManagedObject release];
     }
     
     // if the elementName of the XML matches a Core Data attribute
