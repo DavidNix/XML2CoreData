@@ -20,6 +20,7 @@
 		71FE46BF16483D1F00678D2A /* DNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71FE46BE16483D1F00678D2A /* DNViewController.m */; };
 		71FE46CB164842C600678D2A /* DNParseOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 71FE46CA164842C600678D2A /* DNParseOperation.m */; };
 		71FE46CE1648438900678D2A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71FE46CD1648438900678D2A /* CoreData.framework */; };
+		71FE46D1164966BA00678D2A /* XML2CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 71FE46CF164966BA00678D2A /* XML2CoreData.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		71FE46C9164842C600678D2A /* DNParseOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNParseOperation.h; sourceTree = "<group>"; };
 		71FE46CA164842C600678D2A /* DNParseOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNParseOperation.m; sourceTree = "<group>"; };
 		71FE46CD1648438900678D2A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		71FE46D0164966BA00678D2A /* XML2CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = XML2CoreData.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				71FE46CA164842C600678D2A /* DNParseOperation.m */,
 				71FE46B116483D1F00678D2A /* DNAppDelegate.h */,
 				71FE46B216483D1F00678D2A /* DNAppDelegate.m */,
+				71FE46CF164966BA00678D2A /* XML2CoreData.xcdatamodeld */,
 				71FE46BA16483D1F00678D2A /* MainStoryboard.storyboard */,
 				71FE46BD16483D1F00678D2A /* DNViewController.h */,
 				71FE46BE16483D1F00678D2A /* DNViewController.m */,
@@ -187,6 +190,7 @@
 				71FE46B316483D1F00678D2A /* DNAppDelegate.m in Sources */,
 				71FE46BF16483D1F00678D2A /* DNViewController.m in Sources */,
 				71FE46CB164842C600678D2A /* DNParseOperation.m in Sources */,
+				71FE46D1164966BA00678D2A /* XML2CoreData.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +312,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		71FE46CF164966BA00678D2A /* XML2CoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				71FE46D0164966BA00678D2A /* XML2CoreData.xcdatamodel */,
+			);
+			currentVersion = 71FE46D0164966BA00678D2A /* XML2CoreData.xcdatamodel */;
+			path = XML2CoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 71FE469516483D1F00678D2A /* Project object */;
 }
