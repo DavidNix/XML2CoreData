@@ -15,14 +15,19 @@
 
 #import "MovieViewController.h"
 
+@class DNAppDelegate;
 @interface MovieViewController ()
 
 @end
 
 @implementation MovieViewController
 
+@synthesize fetchedResultsController=fetchedResultsController_;
+
 - (void)viewDidLoad
 {
+    self.appDelegate = (DNAppDelegate*)[[UIApplication sharedApplication] delegate];
+    self.managedObjectContext = self.appDelegate.managedObjectContext;
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
@@ -31,6 +36,26 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark -
+#pragma mark Table View Datasource Delegate
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"movieCell"];
+    NSManagedObject *movie = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    cell.textLabel.text = [movie valueForKey:@"title"];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"Starring: %@", [movie valueForKey:@"starActor"]];
+    
+    return cell;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [self.fetchedResultsController.fetchedObjects count];
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
 }
 
 #pragma mark -
@@ -68,16 +93,15 @@
     NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc]
 															 initWithFetchRequest:fetchRequest
 															 managedObjectContext:self.managedObjectContext
-															 sectionNameKeyPath:@"sectionName"
-															 cacheName:@"appCache"];
+															 sectionNameKeyPath:nil
+															 cacheName:@"XML2CoreDataFetchedResultsCache"];
     aFetchedResultsController.delegate = self;
     self.fetchedResultsController = aFetchedResultsController;
     
     NSError *error = nil;
     
-    
     if (![fetchedResultsController_ performFetch:&error]) {
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        NSLog(@"Unresolved error %@, %@", [error localizedDescription], [error userInfo]);
         
 #ifdef DEBUG
         abort();
