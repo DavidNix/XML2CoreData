@@ -67,13 +67,6 @@
         return fetchedResultsController_;
     }
     
-    /*
-     Set up the fetched results controller.
-     */
-#ifdef DEBUG
-    NSLog(@"RELOADING new fetched results controller");
-#endif
-    
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Movie" inManagedObjectContext:self.managedObjectContext];
