@@ -34,7 +34,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <segue destination="wfB-rw-3HO" kind="push" id="PNT-0u-qPf"/>
+                                    <segue destination="wfB-rw-3HO" kind="push" identifier="ShowCharacters" id="PNT-0u-qPf"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -70,7 +70,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <segue destination="J3F-Bb-u4K" kind="push" id="NOe-EC-GTP"/>
+                                    <segue destination="J3F-Bb-u4K" kind="push" identifier="ShowCharacterNotes" id="NOe-EC-GTP"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
