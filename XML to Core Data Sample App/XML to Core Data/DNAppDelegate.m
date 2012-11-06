@@ -60,7 +60,7 @@
  */
 - (NSManagedObjectContext *)managedObjectContext {
 #ifdef DEBUG
-    NSLog(@"ManagedObject Context Called.");
+    NSLog(@"ManagedObjectContext Called.");
 #endif
     
     if (managedObjectContext_ != nil) {
@@ -82,7 +82,7 @@
  */
 - (NSManagedObjectModel *)managedObjectModel {
 #ifdef DEBUG
-    NSLog(@"ManagedObject Model Called.");
+    NSLog(@"ManagedObjectModel Called.");
 #endif
     
     if (managedObjectModel_ != nil) {
@@ -95,12 +95,6 @@
 }
 
 
-/**
- Added encryption for the persistent store.
- The database is only decrypted after the Password Controller is dismissed.
- If the Password Controller's password is compromised, an attacker will have full access to all the data, so it's important this password is
- kept secret.
- */
 - (NSPersistentStoreCoordinator *)persistentStoreCoordinator {
     
     if (persistentStoreCoordinator_ != nil) {
@@ -113,26 +107,7 @@
     persistentStoreCoordinator_ = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
     if (![persistentStoreCoordinator_ addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
         
-        //        // delete the store and start over
-        //        [[NSFileManager defaultManager] removeItemAtURL:storeURL error:nil];
-        //        [self persistentStoreCoordinator];
-        
-        
-        //        if (![persistentStoreCoordinator_ addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:nil]) {
-    }
-    
-    
-    
-    // set the file protection level for the persistent store, that way the file is hardware encrypted while the app is locked
-    // but this means the strength of the encryption is only as good as the user's iPhone passcode or password
-    // this ONLY works with iOS 4 or later.
-    // Even though we encrypt it above, this operation is cheap and adds 1 more layer of security.
-    // source:  https://nickharris.wordpress.com/2010/07/14/core-data-and-enterprise-iphone-applications-protecting-your-data/
-    NSError *dataProtectError = nil;
-    NSDictionary *fileAttributes = [NSDictionary dictionaryWithObject:NSFileProtectionComplete forKey:NSFileProtectionKey];
-    if (![[NSFileManager defaultManager] setAttributes:fileAttributes ofItemAtPath:[storeURL path] error:&dataProtectError]) {
-        // not going to warn the user since the store is encrypted as above
-        NSLog(@"Unresolved error %@, %@", dataProtectError, [dataProtectError userInfo]);
+        // handle error here
     }
     
     

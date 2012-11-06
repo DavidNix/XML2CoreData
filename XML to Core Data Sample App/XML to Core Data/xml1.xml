@@ -1,0 +1,12 @@
+<?xml version= "1.0" encoding="UTF8"?>
+<Movies>
+	<Movie>
+		<title>Jerry Maguire</title>
+		<starActor>Tom Cruise</starActor>
+		<characters>
+			<Character>
+				<characterName>Jerry Maguire</characterName>
+			</Character>
+			<Character>
+				<characterName>Rod Tidwell</characterName>
+			</Character>
