@@ -123,7 +123,7 @@ NSString *kParseOperationMsgErrorKey = @"ParseOperationMsgErrorKey";
     DNAppDelegate *appDelegate = (DNAppDelegate *)[[UIApplication sharedApplication] delegate];
     [self.managedObjectContext setPersistentStoreCoordinator:appDelegate.persistentStoreCoordinator];
     
-    entities = [[appDelegate.managedObjectModel entities] retain];
+    entities = [appDelegate.managedObjectModel entities];
     parsedObjectCounter = 0;
     self.currentParsedCharacterData = [NSMutableString string];
     self.objectHierarchy = [NSMutableArray array];
