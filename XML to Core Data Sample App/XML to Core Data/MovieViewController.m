@@ -13,13 +13,13 @@
  
  */
 
-#import "DNMasterViewController.h"
+#import "MovieViewController.h"
 
-@interface DNMasterViewController ()
+@interface MovieViewController ()
 
 @end
 
-@implementation DNMasterViewController
+@implementation MovieViewController
 
 - (void)viewDidLoad
 {

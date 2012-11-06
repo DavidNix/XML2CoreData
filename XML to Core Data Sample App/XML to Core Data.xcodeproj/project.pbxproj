@@ -18,7 +18,7 @@
 		71FE46B716483D1F00678D2A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71FE46B616483D1F00678D2A /* Default@2x.png */; };
 		71FE46B916483D1F00678D2A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71FE46B816483D1F00678D2A /* Default-568h@2x.png */; };
 		71FE46BC16483D1F00678D2A /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71FE46BA16483D1F00678D2A /* MainStoryboard.storyboard */; };
-		71FE46BF16483D1F00678D2A /* DNMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71FE46BE16483D1F00678D2A /* DNMasterViewController.m */; };
+		71FE46BF16483D1F00678D2A /* MovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71FE46BE16483D1F00678D2A /* MovieViewController.m */; };
 		71FE46CB164842C600678D2A /* DNParseOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 71FE46CA164842C600678D2A /* DNParseOperation.m */; };
 		71FE46CE1648438900678D2A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71FE46CD1648438900678D2A /* CoreData.framework */; };
 		71FE46D1164966BA00678D2A /* XML2CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 71FE46CF164966BA00678D2A /* XML2CoreData.xcdatamodeld */; };
@@ -40,8 +40,8 @@
 		71FE46B616483D1F00678D2A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		71FE46B816483D1F00678D2A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		71FE46BB16483D1F00678D2A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		71FE46BD16483D1F00678D2A /* DNMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNMasterViewController.h; sourceTree = "<group>"; };
-		71FE46BE16483D1F00678D2A /* DNMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNMasterViewController.m; sourceTree = "<group>"; };
+		71FE46BD16483D1F00678D2A /* MovieViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieViewController.h; sourceTree = "<group>"; };
+		71FE46BE16483D1F00678D2A /* MovieViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieViewController.m; sourceTree = "<group>"; };
 		71FE46C9164842C600678D2A /* DNParseOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNParseOperation.h; sourceTree = "<group>"; };
 		71FE46CA164842C600678D2A /* DNParseOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNParseOperation.m; sourceTree = "<group>"; };
 		71FE46CD1648438900678D2A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -100,8 +100,8 @@
 				71FE46B216483D1F00678D2A /* DNAppDelegate.m */,
 				71FE46CF164966BA00678D2A /* XML2CoreData.xcdatamodeld */,
 				71FE46BA16483D1F00678D2A /* MainStoryboard.storyboard */,
-				71FE46BD16483D1F00678D2A /* DNMasterViewController.h */,
-				71FE46BE16483D1F00678D2A /* DNMasterViewController.m */,
+				71FE46BD16483D1F00678D2A /* MovieViewController.h */,
+				71FE46BE16483D1F00678D2A /* MovieViewController.m */,
 				71FE46A916483D1F00678D2A /* Supporting Files */,
 			);
 			path = "XML to Core Data";
@@ -192,7 +192,7 @@
 			files = (
 				71FE46AF16483D1F00678D2A /* main.m in Sources */,
 				71FE46B316483D1F00678D2A /* DNAppDelegate.m in Sources */,
-				71FE46BF16483D1F00678D2A /* DNMasterViewController.m in Sources */,
+				71FE46BF16483D1F00678D2A /* MovieViewController.m in Sources */,
 				71FE46CB164842C600678D2A /* DNParseOperation.m in Sources */,
 				71FE46D1164966BA00678D2A /* XML2CoreData.xcdatamodeld in Sources */,
 			);

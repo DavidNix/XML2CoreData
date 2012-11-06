@@ -21,6 +21,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [self addTestData];
     return YES;
 }
 							
@@ -51,8 +52,32 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+-(void)addTestData {
+    NSManagedObject *movie = [NSEntityDescription insertNewObjectForEntityForName:@"Movie" inManagedObjectContext:self.managedObjectContext];
+    [movie setValue:@"Jerry Maguire" forKey:@"title"];
+    [movie setValue:@"Tom Cruise" forKey:@"starActor"];
+    
+    [self saveContextWithMOC:self.managedObjectContext];
+    
+}
+
 #pragma mark -
 #pragma mark Core Data stack
+
+- (void)saveContextWithMOC:(NSManagedObjectContext *)moc {
+    
+    NSError *error = nil;
+    if (moc != nil) {
+        if ([moc hasChanges] && ![moc save:&error]) {
+            
+            NSLog(@"%@ unable to save with error:  %@", NSStringFromClass([self class]), error);
+            
+#ifdef DEBUG
+            abort();
+#endif
+        }
+    }
+}
 
 /**
  Returns the managed object context for the application.
