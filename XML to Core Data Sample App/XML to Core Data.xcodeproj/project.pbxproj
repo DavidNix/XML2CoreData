@@ -17,7 +17,7 @@
 		71FE46B716483D1F00678D2A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71FE46B616483D1F00678D2A /* Default@2x.png */; };
 		71FE46B916483D1F00678D2A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71FE46B816483D1F00678D2A /* Default-568h@2x.png */; };
 		71FE46BC16483D1F00678D2A /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71FE46BA16483D1F00678D2A /* MainStoryboard.storyboard */; };
-		71FE46BF16483D1F00678D2A /* DNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71FE46BE16483D1F00678D2A /* DNViewController.m */; };
+		71FE46BF16483D1F00678D2A /* DNMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71FE46BE16483D1F00678D2A /* DNMasterViewController.m */; };
 		71FE46CB164842C600678D2A /* DNParseOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 71FE46CA164842C600678D2A /* DNParseOperation.m */; };
 		71FE46CE1648438900678D2A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71FE46CD1648438900678D2A /* CoreData.framework */; };
 		71FE46D1164966BA00678D2A /* XML2CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 71FE46CF164966BA00678D2A /* XML2CoreData.xcdatamodeld */; };
@@ -38,8 +38,8 @@
 		71FE46B616483D1F00678D2A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		71FE46B816483D1F00678D2A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		71FE46BB16483D1F00678D2A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		71FE46BD16483D1F00678D2A /* DNViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNViewController.h; sourceTree = "<group>"; };
-		71FE46BE16483D1F00678D2A /* DNViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNViewController.m; sourceTree = "<group>"; };
+		71FE46BD16483D1F00678D2A /* DNMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNMasterViewController.h; sourceTree = "<group>"; };
+		71FE46BE16483D1F00678D2A /* DNMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNMasterViewController.m; sourceTree = "<group>"; };
 		71FE46C9164842C600678D2A /* DNParseOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNParseOperation.h; sourceTree = "<group>"; };
 		71FE46CA164842C600678D2A /* DNParseOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNParseOperation.m; sourceTree = "<group>"; };
 		71FE46CD1648438900678D2A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -98,8 +98,8 @@
 				71FE46B216483D1F00678D2A /* DNAppDelegate.m */,
 				71FE46CF164966BA00678D2A /* XML2CoreData.xcdatamodeld */,
 				71FE46BA16483D1F00678D2A /* MainStoryboard.storyboard */,
-				71FE46BD16483D1F00678D2A /* DNViewController.h */,
-				71FE46BE16483D1F00678D2A /* DNViewController.m */,
+				71FE46BD16483D1F00678D2A /* DNMasterViewController.h */,
+				71FE46BE16483D1F00678D2A /* DNMasterViewController.m */,
 				71FE46A916483D1F00678D2A /* Supporting Files */,
 			);
 			path = "XML to Core Data";
@@ -122,9 +122,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		71FE469D16483D1F00678D2A /* XML to Core Data */ = {
+		71FE469D16483D1F00678D2A /* XML2CoreData */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 71FE46C216483D1F00678D2A /* Build configuration list for PBXNativeTarget "XML to Core Data" */;
+			buildConfigurationList = 71FE46C216483D1F00678D2A /* Build configuration list for PBXNativeTarget "XML2CoreData" */;
 			buildPhases = (
 				71FE469A16483D1F00678D2A /* Sources */,
 				71FE469B16483D1F00678D2A /* Frameworks */,
@@ -134,7 +134,7 @@
 			);
 			dependencies = (
 			);
-			name = "XML to Core Data";
+			name = XML2CoreData;
 			productName = "XML to Core Data";
 			productReference = 71FE469E16483D1F00678D2A /* XML to Core Data.app */;
 			productType = "com.apple.product-type.application";
@@ -161,7 +161,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				71FE469D16483D1F00678D2A /* XML to Core Data */,
+				71FE469D16483D1F00678D2A /* XML2CoreData */,
 			);
 		};
 /* End PBXProject section */
@@ -188,7 +188,7 @@
 			files = (
 				71FE46AF16483D1F00678D2A /* main.m in Sources */,
 				71FE46B316483D1F00678D2A /* DNAppDelegate.m in Sources */,
-				71FE46BF16483D1F00678D2A /* DNViewController.m in Sources */,
+				71FE46BF16483D1F00678D2A /* DNMasterViewController.m in Sources */,
 				71FE46CB164842C600678D2A /* DNParseOperation.m in Sources */,
 				71FE46D1164966BA00678D2A /* XML2CoreData.xcdatamodeld in Sources */,
 			);
@@ -238,7 +238,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -259,7 +259,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -302,7 +302,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		71FE46C216483D1F00678D2A /* Build configuration list for PBXNativeTarget "XML to Core Data" */ = {
+		71FE46C216483D1F00678D2A /* Build configuration list for PBXNativeTarget "XML2CoreData" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				71FE46C316483D1F00678D2A /* Debug */,
