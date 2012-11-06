@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		717EEF4C1649B6BC0035D7F6 /* xml1.xml in Resources */ = {isa = PBXBuildFile; fileRef = 717EEF4B1649B6BC0035D7F6 /* xml1.xml */; };
 		71FE46A316483D1F00678D2A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71FE46A216483D1F00678D2A /* UIKit.framework */; };
 		71FE46A516483D1F00678D2A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71FE46A416483D1F00678D2A /* Foundation.framework */; };
 		71FE46A716483D1F00678D2A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71FE46A616483D1F00678D2A /* CoreGraphics.framework */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		717EEF4B1649B6BC0035D7F6 /* xml1.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = xml1.xml; sourceTree = "<group>"; };
 		71FE469E16483D1F00678D2A /* XML to Core Data.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "XML to Core Data.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		71FE46A216483D1F00678D2A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		71FE46A416483D1F00678D2A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -108,6 +110,7 @@
 		71FE46A916483D1F00678D2A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				717EEF4B1649B6BC0035D7F6 /* xml1.xml */,
 				71FE46AA16483D1F00678D2A /* XML to Core Data-Info.plist */,
 				71FE46AB16483D1F00678D2A /* InfoPlist.strings */,
 				71FE46AE16483D1F00678D2A /* main.m */,
@@ -176,6 +179,7 @@
 				71FE46B716483D1F00678D2A /* Default@2x.png in Resources */,
 				71FE46B916483D1F00678D2A /* Default-568h@2x.png in Resources */,
 				71FE46BC16483D1F00678D2A /* MainStoryboard.storyboard in Resources */,
+				717EEF4C1649B6BC0035D7F6 /* xml1.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
