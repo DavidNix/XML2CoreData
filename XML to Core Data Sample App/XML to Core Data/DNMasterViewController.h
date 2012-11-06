@@ -1,6 +1,7 @@
 //
-//  DNViewController.m
+//  DNViewController.h
 //  XML to Core Data
+//
 /*
  
  Copyright (C) 2012 David Nix
@@ -13,24 +14,17 @@
  
  */
 
-#import "DNViewController.h"
+#import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
 
-@interface DNViewController ()
-
-@end
-
-@implementation DNViewController
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+@interface DNMasterViewController : UITableViewController <NSFetchedResultsControllerDelegate> {
+@private
+    
+    NSFetchedResultsController *fetchedResultsController_;
+    NSManagedObjectContext *managedObjectContext_;
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 
 @end
