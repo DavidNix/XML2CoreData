@@ -16,7 +16,7 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
-#import "DNAppDelegate.h"
+#import "AppDelegate.h"
 
 @interface MovieViewController : UITableViewController <NSFetchedResultsControllerDelegate, UITableViewDataSource> {
 @private
@@ -26,6 +26,6 @@
 
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
-@property (strong) DNAppDelegate *appDelegate;
+@property (strong) AppDelegate *appDelegate;
 
 @end

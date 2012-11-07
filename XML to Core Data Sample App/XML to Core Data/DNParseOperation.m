@@ -11,7 +11,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
  */
 
 #import "DNParseOperation.h"
-#import "DNAppDelegate.h"
+#import "AppDelegate.h"
 
 // NSNotifications
 NSString *kDidBeginParsing = @"DidBeginParsing";
@@ -120,7 +120,7 @@ NSString *kParseOperationMsgErrorKey = @"ParseOperationMsgErrorKey";
     managedObjectContext = [[NSManagedObjectContext alloc] init];
     [self.managedObjectContext setUndoManager:nil];
     
-    DNAppDelegate *appDelegate = (DNAppDelegate *)[[UIApplication sharedApplication] delegate];
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     [self.managedObjectContext setPersistentStoreCoordinator:appDelegate.persistentStoreCoordinator];
     
     entities = [appDelegate.managedObjectModel entities];

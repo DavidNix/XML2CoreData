@@ -16,7 +16,7 @@
 #import "MovieViewController.h"
 #import "CharactersController.h"
 
-@class DNAppDelegate;
+@class AppDelegate;
 @interface MovieViewController ()
 
 @end
@@ -27,7 +27,7 @@
 
 - (void)viewDidLoad
 {
-    self.appDelegate = (DNAppDelegate*)[[UIApplication sharedApplication] delegate];
+    self.appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     self.managedObjectContext = self.appDelegate.managedObjectContext;
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.

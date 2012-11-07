@@ -16,7 +16,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 
-@interface DNAppDelegate : UIResponder <UIApplicationDelegate> {
+@interface AppDelegate : UIResponder <UIApplicationDelegate> {
 
 @private
     NSManagedObjectContext *managedObjectContext_;

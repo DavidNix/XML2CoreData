@@ -14,7 +14,7 @@
 		71FE46A716483D1F00678D2A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71FE46A616483D1F00678D2A /* CoreGraphics.framework */; };
 		71FE46AD16483D1F00678D2A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 71FE46AB16483D1F00678D2A /* InfoPlist.strings */; };
 		71FE46AF16483D1F00678D2A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 71FE46AE16483D1F00678D2A /* main.m */; };
-		71FE46B316483D1F00678D2A /* DNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 71FE46B216483D1F00678D2A /* DNAppDelegate.m */; };
+		71FE46B316483D1F00678D2A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 71FE46B216483D1F00678D2A /* AppDelegate.m */; };
 		71FE46B516483D1F00678D2A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 71FE46B416483D1F00678D2A /* Default.png */; };
 		71FE46B716483D1F00678D2A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71FE46B616483D1F00678D2A /* Default@2x.png */; };
 		71FE46B916483D1F00678D2A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71FE46B816483D1F00678D2A /* Default-568h@2x.png */; };
@@ -37,8 +37,8 @@
 		71FE46AC16483D1F00678D2A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		71FE46AE16483D1F00678D2A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		71FE46B016483D1F00678D2A /* XML to Core Data-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XML to Core Data-Prefix.pch"; sourceTree = "<group>"; };
-		71FE46B116483D1F00678D2A /* DNAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNAppDelegate.h; sourceTree = "<group>"; };
-		71FE46B216483D1F00678D2A /* DNAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNAppDelegate.m; sourceTree = "<group>"; };
+		71FE46B116483D1F00678D2A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		71FE46B216483D1F00678D2A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		71FE46B416483D1F00678D2A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		71FE46B616483D1F00678D2A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		71FE46B816483D1F00678D2A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -99,8 +99,8 @@
 			children = (
 				71FE46C9164842C600678D2A /* DNParseOperation.h */,
 				71FE46CA164842C600678D2A /* DNParseOperation.m */,
-				71FE46B116483D1F00678D2A /* DNAppDelegate.h */,
-				71FE46B216483D1F00678D2A /* DNAppDelegate.m */,
+				71FE46B116483D1F00678D2A /* AppDelegate.h */,
+				71FE46B216483D1F00678D2A /* AppDelegate.m */,
 				71FE46CF164966BA00678D2A /* XML2CoreData.xcdatamodeld */,
 				71FE46BA16483D1F00678D2A /* MainStoryboard.storyboard */,
 				71FE46BD16483D1F00678D2A /* MovieViewController.h */,
@@ -196,7 +196,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				71FE46AF16483D1F00678D2A /* main.m in Sources */,
-				71FE46B316483D1F00678D2A /* DNAppDelegate.m in Sources */,
+				71FE46B316483D1F00678D2A /* AppDelegate.m in Sources */,
 				71FE46BF16483D1F00678D2A /* MovieViewController.m in Sources */,
 				71FE46CB164842C600678D2A /* DNParseOperation.m in Sources */,
 				71FE46D1164966BA00678D2A /* XML2CoreData.xcdatamodeld in Sources */,

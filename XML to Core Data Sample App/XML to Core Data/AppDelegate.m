@@ -14,9 +14,9 @@
  
  */
 
-#import "DNAppDelegate.h"
+#import "AppDelegate.h"
 
-@implementation DNAppDelegate
+@implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -73,7 +73,7 @@
 }
 
 #pragma mark -
-#pragma mark Core Data stack
+#pragma mark Core Data stack and methods
 
 - (void)saveContextWithMOC:(NSManagedObjectContext *)moc {
     
