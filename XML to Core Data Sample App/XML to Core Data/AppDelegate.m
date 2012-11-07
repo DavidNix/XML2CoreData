@@ -70,6 +70,9 @@
     NSManagedObject *charNote = [NSEntityDescription insertNewObjectForEntityForName:@"CharacterNote" inManagedObjectContext:self.managedObjectContext];
     [charNote setValue:@"Nobody football player turned famous.  Jerry Maguire's last client.  The one who ends up saving him." forKey:@"noteDescription"];
     [charNotes addObject:charNote];
+    charNote = [NSEntityDescription insertNewObjectForEntityForName:@"CharacterNote" inManagedObjectContext:self.managedObjectContext];
+    [charNote setValue:@"Just another character note.  He's very loud and sometimes abrasive." forKey:@"noteDescription"];
+    [charNotes addObject:charNote];
 }
 
 #pragma mark -
