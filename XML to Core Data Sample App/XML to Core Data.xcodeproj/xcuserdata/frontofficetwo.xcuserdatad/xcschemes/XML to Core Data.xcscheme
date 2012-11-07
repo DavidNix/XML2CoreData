@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "71FE469D16483D1F00678D2A"
-               BuildableName = "XML to Core Data.app"
+               BuildableName = "XML2CoreData.app"
                BlueprintName = "XML2CoreData"
                ReferencedContainer = "container:XML to Core Data.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "71FE469D16483D1F00678D2A"
-            BuildableName = "XML to Core Data.app"
+            BuildableName = "XML2CoreData.app"
             BlueprintName = "XML2CoreData"
             ReferencedContainer = "container:XML to Core Data.xcodeproj">
          </BuildableReference>
@@ -52,7 +52,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "71FE469D16483D1F00678D2A"
-            BuildableName = "XML to Core Data.app"
+            BuildableName = "XML2CoreData.app"
             BlueprintName = "XML2CoreData"
             ReferencedContainer = "container:XML to Core Data.xcodeproj">
          </BuildableReference>
@@ -70,7 +70,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "71FE469D16483D1F00678D2A"
-            BuildableName = "XML to Core Data.app"
+            BuildableName = "XML2CoreData.app"
             BlueprintName = "XML2CoreData"
             ReferencedContainer = "container:XML to Core Data.xcodeproj">
          </BuildableReference>

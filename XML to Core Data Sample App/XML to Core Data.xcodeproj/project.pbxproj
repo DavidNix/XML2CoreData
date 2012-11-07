@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		717EEF4C1649B6BC0035D7F6 /* xml1.xml in Resources */ = {isa = PBXBuildFile; fileRef = 717EEF4B1649B6BC0035D7F6 /* xml1.xml */; };
+		717EEF53164AC0F10035D7F6 /* CharactersController.m in Sources */ = {isa = PBXBuildFile; fileRef = 717EEF52164AC0F10035D7F6 /* CharactersController.m */; };
 		71FE46A316483D1F00678D2A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71FE46A216483D1F00678D2A /* UIKit.framework */; };
 		71FE46A516483D1F00678D2A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71FE46A416483D1F00678D2A /* Foundation.framework */; };
 		71FE46A716483D1F00678D2A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71FE46A616483D1F00678D2A /* CoreGraphics.framework */; };
@@ -26,7 +27,9 @@
 
 /* Begin PBXFileReference section */
 		717EEF4B1649B6BC0035D7F6 /* xml1.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = xml1.xml; sourceTree = "<group>"; };
-		71FE469E16483D1F00678D2A /* XML to Core Data.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "XML to Core Data.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		717EEF51164AC0F10035D7F6 /* CharactersController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharactersController.h; sourceTree = "<group>"; };
+		717EEF52164AC0F10035D7F6 /* CharactersController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharactersController.m; sourceTree = "<group>"; };
+		71FE469E16483D1F00678D2A /* XML to Core Data.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "XML to Core Data.app"; path = XML2CoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71FE46A216483D1F00678D2A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		71FE46A416483D1F00678D2A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		71FE46A616483D1F00678D2A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -102,6 +105,8 @@
 				71FE46BA16483D1F00678D2A /* MainStoryboard.storyboard */,
 				71FE46BD16483D1F00678D2A /* MovieViewController.h */,
 				71FE46BE16483D1F00678D2A /* MovieViewController.m */,
+				717EEF51164AC0F10035D7F6 /* CharactersController.h */,
+				717EEF52164AC0F10035D7F6 /* CharactersController.m */,
 				71FE46A916483D1F00678D2A /* Supporting Files */,
 			);
 			path = "XML to Core Data";
@@ -195,6 +200,7 @@
 				71FE46BF16483D1F00678D2A /* MovieViewController.m in Sources */,
 				71FE46CB164842C600678D2A /* DNParseOperation.m in Sources */,
 				71FE46D1164966BA00678D2A /* XML2CoreData.xcdatamodeld in Sources */,
+				717EEF53164AC0F10035D7F6 /* CharactersController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
