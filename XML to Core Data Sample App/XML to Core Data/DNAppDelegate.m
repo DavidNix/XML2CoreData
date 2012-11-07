@@ -21,6 +21,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [self eraseAllData];
     [self addTestData];
     return YES;
 }
@@ -90,7 +91,11 @@
 }
 
 -(void)eraseAllData {
-    
+    NSFetchRequest *fetch = [[NSFetchRequest alloc] init];
+    [fetch setEntity:[NSEntityDescription entityForName:@"Movie" inManagedObjectContext:self.managedObjectContext]];
+    NSArray *results = [self.managedObjectContext executeFetchRequest:fetch error:nil];
+    for (NSManagedObject *movie in results)
+        [self.managedObjectContext deleteObject:movie];
 }
 
 /**
