@@ -57,7 +57,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     NSManagedObject *note = [notesArray objectAtIndex:indexPath.row];
-    cell.textLabel.text = [note valueForKey:@"characterName"];
+    cell.textLabel.text = [note valueForKey:@"noteDescription"];
     
     return cell;
 }
