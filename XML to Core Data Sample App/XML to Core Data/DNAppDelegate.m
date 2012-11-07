@@ -57,8 +57,18 @@
     [movie setValue:@"Jerry Maguire" forKey:@"title"];
     [movie setValue:@"Tom Cruise" forKey:@"starActor"];
     
+    // add a character to the movie
+    NSMutableSet *characters = [movie mutableSetValueForKey:@"characters"];
     [self saveContextWithMOC:self.managedObjectContext];
+    NSManagedObject *character = [NSEntityDescription insertNewObjectForEntityForName:@"Character" inManagedObjectContext:self.managedObjectContext];
+    [character setValue:@"Rod Tidwell" forKey:@"characterName"];
+    [characters addObject:character];
     
+    // add a character note to the character
+    NSMutableSet *charNotes = [character mutableSetValueForKey:@"characterNotes"];
+    NSManagedObject *charNote = [NSEntityDescription insertNewObjectForEntityForName:@"CharacterNote" inManagedObjectContext:self.managedObjectContext];
+    [charNote setValue:@"Nobody football player turned famous.  Jerry Maguire's last client.  The one who ends up saving him." forKey:@"noteDescription"];
+    [charNotes addObject:charNote];
 }
 
 #pragma mark -
@@ -77,6 +87,10 @@
 #endif
         }
     }
+}
+
+-(void)eraseAllData {
+    
 }
 
 /**
