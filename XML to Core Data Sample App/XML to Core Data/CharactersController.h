@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 
-@interface CharactersController : UITableViewController <UITableViewDataSource>
+@interface CharactersController : UITableViewController <UITableViewDataSource> {
+    @private
+    NSMutableArray *charactersArray;
+}
 
 @property (strong, nonatomic) NSManagedObject *selectedMovie;
 

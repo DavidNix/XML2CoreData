@@ -14,6 +14,7 @@
  */
 
 #import "MovieViewController.h"
+#import "CharactersController.h"
 
 @class DNAppDelegate;
 @interface MovieViewController ()
@@ -37,6 +38,14 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    CharactersController *dest = (CharactersController*)[segue destinationViewController];
+    UITableViewCell *cell = (UITableViewCell*)sender;
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    dest.selectedMovie = [self.fetchedResultsController objectAtIndexPath:indexPath];
+}
+
 
 #pragma mark -
 #pragma mark Table View Datasource Delegate

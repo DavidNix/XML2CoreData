@@ -26,7 +26,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	
+    charactersArray = [NSMutableArray array];
+    
+    NSSet *charactersSet = [self.selectedMovie valueForKey:@"characters"];
+    NSArray *unsortedCharacters = [charactersSet allObjects];
+    
+    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"characterName" ascending:YES];
+	NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+    charactersArray = (NSMutableArray*)[unsortedCharacters sortedArrayUsingDescriptors:sortDescriptors];
 }
 
 - (void)didReceiveMemoryWarning
@@ -39,16 +47,15 @@
 #pragma mark Table View Datasource Delegate
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"movieCell"];
-    NSManagedObject *movie = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [movie valueForKey:@"title"];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"Starring: %@", [movie valueForKey:@"starActor"]];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"characterCell"];
+    NSManagedObject *character = [charactersArray objectAtIndex:indexPath.row];
+    cell.textLabel.text = [character valueForKey:@"characterName"];
     
     return cell;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.fetchedResultsController.fetchedObjects count];
+    return [charactersArray count];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
