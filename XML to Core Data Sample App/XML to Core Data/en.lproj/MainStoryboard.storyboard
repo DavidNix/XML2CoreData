@@ -39,7 +39,9 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Movies" id="iZk-MI-Rf7"/>
+                    <navigationItem key="navigationItem" title="Movies" id="iZk-MI-Rf7">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="I1Y-NI-v5M"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jBK-RZ-tKZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
