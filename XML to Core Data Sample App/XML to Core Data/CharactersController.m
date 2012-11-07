@@ -7,6 +7,7 @@
 //
 
 #import "CharactersController.h"
+#import "CharacterNoteController.h"
 
 @interface CharactersController ()
 
@@ -41,6 +42,13 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    CharacterNoteController *dest = (CharacterNoteController*)[segue destinationViewController];
+    UITableViewCell *cell = (UITableViewCell*)sender;
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    dest.selectedCharacter = [charactersArray objectAtIndex:indexPath.row];
 }
 
 #pragma mark -
