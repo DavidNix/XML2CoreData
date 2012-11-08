@@ -48,6 +48,10 @@ NSString *kParseOperationMsgErrorKey = @"ParseOperationMsgErrorKey";
     if ((self = [super init])) {    
         parseData = [data copy];
         
+        // choose 10 as arbitrary batch size if it's not set.
+        if (self.batchSize < 1 || !self.batchSize)
+            self.batchSize = 10;
+        
     }
     return self;
 }
