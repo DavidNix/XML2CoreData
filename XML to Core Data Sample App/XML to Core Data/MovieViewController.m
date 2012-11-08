@@ -46,6 +46,24 @@
     dest.selectedMovie = [self.fetchedResultsController objectAtIndexPath:indexPath];
 }
 
+#pragma mark -
+#pragma mark Parse Operation
+-(void)startXMLParseOperation {
+    // spawn an NSOperation to parse data in the background without affecting main thread
+    
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"xml1" ofType:@"xml"];
+    NSData *xmlData = [NSData dataWithContentsOfFile:filePath options:NSDataReadingUncached error:nil];
+    parser = [[DNXMLParseOperation alloc] initWithData:xmlData];
+    
+    // notifications to let this view controller know to save managed object context
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(mergeChanges:)
+                                                 name:NSManagedObjectContextDidSaveNotification
+                                               object:nil];
+    
+    [parseQue addOperation:parser];
+}
+
 
 #pragma mark -
 #pragma mark Table View Datasource Delegate

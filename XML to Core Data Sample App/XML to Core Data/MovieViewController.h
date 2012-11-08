@@ -17,11 +17,15 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 #import "AppDelegate.h"
+#import "DNXMLParseOperation.h"
 
 @interface MovieViewController : UITableViewController <NSFetchedResultsControllerDelegate, UITableViewDataSource> {
 @private
     
     NSFetchedResultsController *fetchedResultsController_;
+    
+    DNXMLParseOperation *parser;
+    NSOperationQueue *parseQue;
 }
 
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
