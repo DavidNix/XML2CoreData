@@ -10,7 +10,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
  */
 
-#import "DNParseOperation.h"
+#import "DNXMLParseOperation.h"
 #import "AppDelegate.h"
 
 // NSNotifications
@@ -25,7 +25,7 @@ NSString *kParseOperationErrorNotif = @"ParseOperationErrorNotif";
 NSString *kParseOperationMsgErrorKey = @"ParseOperationMsgErrorKey";
 
 
-@interface ParseOperation () <NSXMLParserDelegate>
+@interface DNXMLParseOperation () <NSXMLParserDelegate>
     
 @property (nonatomic, retain) NSMutableString *currentParsedCharacterData;
 @property (nonatomic, retain) NSMutableArray *objectHierarchy;
@@ -39,7 +39,7 @@ NSString *kParseOperationMsgErrorKey = @"ParseOperationMsgErrorKey";
 
 @end
 
-@implementation ParseOperation
+@implementation DNXMLParseOperation
 
 @synthesize parseData, currentParsedCharacterData, managedObjectContext, objectHierarchy, objectBatch, allInsertedObjects;
 

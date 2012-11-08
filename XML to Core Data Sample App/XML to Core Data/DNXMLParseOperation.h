@@ -18,7 +18,7 @@ extern NSString *kDidFinishParsing;
 extern NSString *kParseOperationErrorNotif;
 extern NSString *kParseOperationMsgErrorKey;
 
-@interface ParseOperation : NSOperation {
+@interface DNXMLParseOperation : NSOperation {
     NSData *parseData;
 
 @private
