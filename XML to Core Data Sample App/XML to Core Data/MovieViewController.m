@@ -33,6 +33,10 @@
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self startXMLParseOperation:self];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -48,7 +52,7 @@
 
 #pragma mark -
 #pragma mark Parse Operation
--(void)startXMLParseOperation {
+-(IBAction)startXMLParseOperation:(id)sender {
     // spawn an NSOperation to parse data in the background without affecting main thread
     
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"xml1" ofType:@"xml"];
@@ -62,6 +66,44 @@
                                                object:nil];
     
     [parseQue addOperation:parser];
+}
+
+#pragma  mark -
+#pragma mark Parser Notification-based Methods
+
+// this is called via observing "NSManagedObjectContextDidSaveNotification" from our ParseOperation and SSCHSyncOperation
+// the app delegate set up root view controller as an observer
+- (void)mergeChanges:(NSNotification *)notification {
+	NSManagedObjectContext *mainContext = [self managedObjectContext];
+    
+    if ([notification object] == mainContext) {
+        
+        // main context save, no need to perform the merge
+        return;
+    }
+    [self performSelectorOnMainThread:@selector(updateContext:) withObject:notification waitUntilDone:YES];
+}
+
+// this is called from mergeChanges: method,
+// requested to be made on the main thread so we can update our table with our new objects
+//
+- (void)updateContext:(NSNotification *)notification
+{
+	NSManagedObjectContext *mainContext = [self managedObjectContext];
+	[mainContext mergeChangesFromContextDidSaveNotification:notification];
+}
+
+// if the parser encounters an error
+-(void)handleParseError:(NSNotification *)notification {
+    
+    NSError *parseError = [[notification userInfo] objectForKey:kParseOperationMsgErrorKey];
+    NSString *errorMsg = [NSString stringWithFormat:@"Malformed data present. Unable to import new data. (Error Code: %i)", [parseError code]];
+    
+    NSLog(@"%@", errorMsg);
+    
+#ifdef DEBUG
+    abort();
+#endif
 }
 
 
