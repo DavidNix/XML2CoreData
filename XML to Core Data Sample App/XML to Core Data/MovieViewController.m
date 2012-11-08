@@ -56,7 +56,11 @@
     // spawn an NSOperation to parse data in the background without affecting main thread
     
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"xml1" ofType:@"xml"];
-    NSData *xmlData = [NSData dataWithContentsOfFile:filePath options:NSDataReadingUncached error:nil];
+    NSError *error = nil;
+    NSData *xmlData = [NSData dataWithContentsOfFile:filePath options:NSDataReadingUncached error:&error];
+    if (error)
+        NSLog(@"Error loading xml data: %@", error);
+    
     parser = [[DNXMLParseOperation alloc] initWithData:xmlData];
     
     // notifications to let this view controller know to save managed object context
