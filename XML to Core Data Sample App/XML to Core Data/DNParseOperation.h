@@ -47,6 +47,8 @@ extern NSString *kParseOperationMsgErrorKey;
 
 @property (nonatomic, retain) NSMutableArray *allInsertedObjects;
 
+@property (nonatomic) NSUInteger batchSize;
+
 - (id)initWithData:(NSData *)data;
 
 @end

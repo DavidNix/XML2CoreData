@@ -52,7 +52,7 @@ NSString *kParseOperationMsgErrorKey = @"ParseOperationMsgErrorKey";
     return self;
 }
 
-// a batch of managed objects are ready to be added
+// a batch of managed objects that are ready to be added
 // should only be executed on the main thread
 - (void)saveManagedObjectsToStore {
     assert([NSThread isMainThread]);
@@ -71,11 +71,6 @@ NSString *kParseOperationMsgErrorKey = @"ParseOperationMsgErrorKey";
         if ([moc hasChanges] && ![moc save:&error] && !abortSaving) {
             
             NSLog(@"%@ unable to save with error:  %@", NSStringFromClass([self class]), error);
-            
-            [[[UIAlertView alloc]
-               initWithTitle:@"Unable to Save" message:@"Unable to save downloaded data. Data you are viewing may be inaccurate. Try resetting the database in Settings." 
-               delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil]
-             show];
             
             abortSaving = YES;
             
@@ -172,7 +167,6 @@ NSString *kParseOperationMsgErrorKey = @"ParseOperationMsgErrorKey";
 // constant below. In your application, the optimal batch size will vary 
 // depending on the amount of data in the object and other factors, as appropriate.
 //
-static NSUInteger const kBatchSizeMaximum = 10;
 static NSString *kParentEntity = @"parent";
 static NSString *kChildEntity = @"child";
 static NSString *kRelationship = @"relationship";
@@ -280,7 +274,7 @@ static NSString *kNoRelationship = @"noRelationship";
         parsedObjectCounter++;
         
         //call the selector to save the context, objects are already inserted into the context
-        if (parsedObjectCounter >= kBatchSizeMaximum) {
+        if (parsedObjectCounter >= self.batchSize) {
             [self performSelectorOnMainThread:@selector(saveManagedObjectsToStore)
                                    withObject:nil
                                 waitUntilDone:YES];
