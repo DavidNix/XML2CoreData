@@ -53,6 +53,10 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+
+#pragma mark -
+#pragma mark Test Data (for debugging of core data logic)
+
 -(void)addTestData {
     NSManagedObject *movie = [NSEntityDescription insertNewObjectForEntityForName:@"Movie" inManagedObjectContext:self.managedObjectContext];
     [movie setValue:@"Jerry Maguire" forKey:@"title"];
