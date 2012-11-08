@@ -1,12 +1,18 @@
 <?xml version= "1.0" encoding="UTF8"?>
 <Movies>
 	<Movie>
-		<title>Jerry Maguire</title>
-		<starActor>Tom Cruise</starActor>
+		<title>Iron Man</title>
+		<starActor>Robert Downey Jr.</starActor>
 		<characters>
 			<Character>
-				<characterName>Jerry Maguire</characterName>
+				<characterName>Tony Stark</characterName>
+                    <characterNotes>
+                        <noteDescription>Billionaire playboy philanthropist.</noteDescription>
+                    </characterNotes>
 			</Character>
 			<Character>
-				<characterName>Rod Tidwell</characterName>
+				<characterName>Pepper Pots</characterName>
 			</Character>
+        </characters>
+    </Movie>
+</Movies>
