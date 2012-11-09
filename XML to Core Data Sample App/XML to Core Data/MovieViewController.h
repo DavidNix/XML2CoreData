@@ -1,5 +1,5 @@
 //
-//  DNViewController.h
+//  MovieViewController.h
 //  XML to Core Data
 //
 /*
