@@ -38,16 +38,72 @@ View the "Schema_Illustration.pdf" for another visual example.
 * Can handle an arbitrary number of objects and 1-to-many relationships as long as the schemas match.
 * Will traverse your object graph an arbitrary number of levels deep.  (i.e. Parent objects with relationships of child objects with relationships of grandchild objects, etc.)
 
-## Setup
+## How to Use
 1. Add the DNXMLParseOperation header and implementation files to your project.  (You can find them in the sample app.)
 
 2. To start parsing:
+    
+    NSData *xmlData = // load the xml file via a method of your choice
+
+    DNXMLParseOperation *parser = [[DNXMLParseOperation alloc] initWithData:xmlData];
+    parser.batchSize = 5;  // optional, defaults to 10
+    
+    // Let an observer know to save and merge the managed object context
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(mergeChanges:)
+                                                 name:NSManagedObjectContextDidSaveNotification
+                                               object:nil];
+
+    // Let an observer know if a parse error ocurred (optional, but recommended)                                        
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(handleParseError:) 
+                                                 name:kParseOperationErrorNotif 
+                                               object:nil];
+    [parseQue addOperation:parser];
 
 3. To cancel/abort parsing:
 
+    [parser cancel];
+
 4. IMPORTANT, to save parsed objects to your Core Data store: 
 
-5. Optional (but recommended), to catch parser errors:
+    // Invoked by observing "NSManagedObjectContextDidSaveNotification" from our Parse Operation
+    - (void)mergeChanges:(NSNotification *)notification {
+        NSManagedObjectContext *mainContext = [self managedObjectContext];
+        
+        if ([notification object] == mainContext) {
+            // main context save, no need to perform the merge
+            return;
+        }
+        [self performSelectorOnMainThread:@selector(updateContext:) withObject:notification waitUntilDone:YES];
+    }
+
+    // Invoked from mergeChanges: method,
+    // Must be on the main thread so we can update our table with our new objects
+    //
+    - (void)updateContext:(NSNotification *)notification
+    {
+        NSManagedObjectContext *mainContext = [self managedObjectContext];
+        [mainContext mergeChangesFromContextDidSaveNotification:notification];
+        
+        [self reloadTableView];
+    }
+
+    // Optional, but especially if using a table view, you must update the UI somehow
+    - (void)reloadTableView {
+        // Force the fetchedResultsController to reload, then force the table view to reload.
+        self.fetchedResultsController = nil;
+        [self fetchedResultsController];
+        [self.tableView reloadData];
+    }
+
+5. Optional (but recommended), implement a method to handle notification `kParseOperationErrorNotif` 
+
+    -(void)handleParseError:(NSNotification *)notification {
+        NSError *parseError = [[notification userInfo] objectForKey:kParseOperationMsgErrorKey];
+        NSString *errorMsg = [NSString stringWithFormat:@"Malformed data present. Unable to import new data. (Error Code: %i)", [parseError code]];
+        // do something with the errorMsg such as show a UIAlertView
+    }
 
 ## Limitations
 * It does not sync or delete any objects.  Only adds them.  You will need to add this functionality.
