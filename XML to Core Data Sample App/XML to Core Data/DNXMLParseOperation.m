@@ -66,7 +66,7 @@ NSString *kParseOperationMsgErrorKey = @"ParseOperationMsgErrorKey";
     [storeCoordinator lock];
     
 #ifdef DEBUG
-    NSLog(@"SAVING managed object context");
+    NSLog(@"SAVING managed object context from XML Parse Operation");
 #endif
         
     NSError *error = nil;

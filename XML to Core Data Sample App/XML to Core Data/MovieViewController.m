@@ -29,6 +29,7 @@
 {
     self.appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     self.managedObjectContext = self.appDelegate.managedObjectContext;
+    parseQue = [[NSOperationQueue alloc] init];
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
@@ -62,8 +63,9 @@
         NSLog(@"Error loading xml data: %@", error);
     
     parser = [[DNXMLParseOperation alloc] initWithData:xmlData];
+    parser.batchSize = 5;  // optional, defaults to 10
     
-    // notifications to let this view controller know to save managed object context
+    // Let observer know to save and merge the managed object context
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(mergeChanges:)
                                                  name:NSManagedObjectContextDidSaveNotification
@@ -95,6 +97,11 @@
 {
 	NSManagedObjectContext *mainContext = [self managedObjectContext];
 	[mainContext mergeChangesFromContextDidSaveNotification:notification];
+    
+    // Force the fetchedResultsController to reload, then force the table view to reload.
+    self.fetchedResultsController = nil;
+    [self fetchedResultsController];
+    [self.tableView reloadData];
 }
 
 // if the parser encounters an error
