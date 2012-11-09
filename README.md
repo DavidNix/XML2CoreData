@@ -7,3 +7,5 @@ Assumes the XML file is downloaded locally first.
 Can handle very large XML files because NSXMLParser is a SAX parser.
 
 Limitations - only works with 1 to many relationships.
+
+to do - make debug nslogs in parse operation more useful ex:  [NSManagedObject addValue:blah forKey: blah]
