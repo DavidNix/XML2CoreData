@@ -30,12 +30,9 @@
     self.appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     self.managedObjectContext = self.appDelegate.managedObjectContext;
     parseQue = [[NSOperationQueue alloc] init];
+    [self startXMLParseOperation:self];
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [self startXMLParseOperation:self];
 }
 
 - (void)didReceiveMemoryWarning
