@@ -59,6 +59,8 @@ Add the DNXMLParseOperation header and implementation files to your project.  (Y
                                              selector:@selector(handleParseError:) 
                                                  name:kParseOperationErrorNotif 
                                                object:nil];
+                                               
+    NSOperationQue *parseQue = [[NSOperationQueue alloc] init];
     [parseQue addOperation:parser];
 
 ### 2. To cancel/abort parsing:
