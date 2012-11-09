@@ -7,7 +7,9 @@
 			<Character>
 				<characterName>Tony Stark</characterName>
                     <characterNotes>
-                        <noteDescription>Billionaire playboy philanthropist.</noteDescription>
+                        <CharacterNote>
+                            <noteDescription>Billionaire playboy philanthropist.</noteDescription>
+                        </CharacterNote>
                     </characterNotes>
 			</Character>
 			<Character>
