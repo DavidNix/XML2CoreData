@@ -1,6 +1,8 @@
 # XML to Core Data
 When an XML schema and Core Data schema are mirrored:  Parses an XML file, creates NSManagedObjects, and adds them to your Core Data store.
 
+All in the background so it minimally affects your UI.
+
 A visual explanation of the XML Schema.
 
     <?xml version= "1.0" encoding="UTF8"?>
@@ -37,6 +39,7 @@ View the "Schema_Illustration.pdf" for another visual example.
 * Can handle large XML files (uses SAX instead of DOM).
 * Can handle an arbitrary number of objects and 1-to-many relationships as long as the schemas match.
 * Will traverse your object graph an arbitrary number of levels deep.  (i.e. Parent objects with relationships of child objects with relationships of grandchild objects, etc.)
+* Should work on both OSX and iOS.
 
 ## How to Use
 Add the DNXMLParseOperation header and implementation files to your project.  (You can find them in the sample app.)
@@ -72,7 +75,6 @@ Add the DNXMLParseOperation header and implementation files to your project.  (Y
     // Invoked by observing "NSManagedObjectContextDidSaveNotification" from our Parse Operation
     - (void)mergeChanges:(NSNotification *)notification {
         NSManagedObjectContext *mainContext = [self managedObjectContext];
-        
         if ([notification object] == mainContext) {
             // main context save, no need to perform the merge
             return;
@@ -87,7 +89,6 @@ Add the DNXMLParseOperation header and implementation files to your project.  (Y
     {
         NSManagedObjectContext *mainContext = [self managedObjectContext];
         [mainContext mergeChangesFromContextDidSaveNotification:notification];
-        
         [self reloadTableView];
     }
 
