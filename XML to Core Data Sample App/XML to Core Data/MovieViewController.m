@@ -73,14 +73,19 @@
                                                  name:NSManagedObjectContextDidSaveNotification
                                                object:nil];
     
+    // Let an observer know if a parse error ocurred (optional, but recommended)
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(handleParseError:)
+                                                 name:kParseOperationErrorNotif
+                                               object:nil];
+    
     [parseQue addOperation:parser];
 }
 
 #pragma  mark -
 #pragma mark Parser Notification-based Methods
 
-// this is called via observing "NSManagedObjectContextDidSaveNotification" from our ParseOperation and SSCHSyncOperation
-// the app delegate set up root view controller as an observer
+// Invoked by observing "NSManagedObjectContextDidSaveNotification" from our ParseOperation
 - (void)mergeChanges:(NSNotification *)notification {
 	NSManagedObjectContext *mainContext = [self managedObjectContext];
     
@@ -92,8 +97,8 @@
     [self performSelectorOnMainThread:@selector(updateContext:) withObject:notification waitUntilDone:YES];
 }
 
-// this is called from mergeChanges: method,
-// requested to be made on the main thread so we can update our table with our new objects
+// Invoked from mergeChanges: method,
+// Must be on the main thread so we can update our table with our new objects
 //
 - (void)updateContext:(NSNotification *)notification
 {
@@ -103,6 +108,7 @@
     [self reloadTableView];
 }
 
+// Optional, but especially if using a table view, you must update the UI somehow
 - (void)reloadTableView {
     // Force the fetchedResultsController to reload, then force the table view to reload.
     self.fetchedResultsController = nil;
