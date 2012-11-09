@@ -14,6 +14,47 @@
 			</Character>
 			<Character>
 				<characterName>Pepper Pots</characterName>
+                <characterNotes>
+                    <CharacterNote>
+                        <noteDescription>Tony Stark's main squeeze.</noteDescription>
+                    </CharacterNote>
+                </characterNotes>
+			</Character>
+        </characters>
+    </Movie>
+    <Movie>
+		<title>Shawshank Redemption</title>
+		<starActor>Morgan Freeman</starActor>
+		<characters>
+			<Character>
+				<characterName>Red</characterName>
+                <characterNotes>
+                    <CharacterNote>
+                        <noteDescription>Prisoner who can get just about anything.</noteDescription>
+                    </CharacterNote>
+                </characterNotes>
+			</Character>
+			<Character>
+				<characterName>Andy</characterName>
+                <characterNotes>
+                    <CharacterNote>
+                        <noteDescription>Wrongly accused banker of killing his wife.</noteDescription>
+                    </CharacterNote>
+                    <CharacterNote>
+                        <noteDescription>Intelligent, selfless, and innocent.</noteDescription>
+                    </CharacterNote>
+                </characterNotes>
+			</Character>
+            <Character>
+				<characterName>The Warden</characterName>
+                <characterNotes>
+                    <CharacterNote>
+                        <noteDescription>A real jerk.</noteDescription>
+                    </CharacterNote>
+                    <CharacterNote>
+                        <noteDescription>Uses the prisoners to make money buy underbidding every contractor in town.</noteDescription>
+                    </CharacterNote>
+                </characterNotes>
 			</Character>
         </characters>
     </Movie>
