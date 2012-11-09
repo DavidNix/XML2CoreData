@@ -1,4 +1,4 @@
-# XML 2 Core Data
+# XML to Core Data
 When an XML schema and Core Data schema are mirrored:  Parses an XML file, creates NSManagedObjects, and adds them to your Core Data store.
 
 A visual explanation of the XML Schema.
@@ -39,9 +39,9 @@ View the "Schema_Illustration.pdf" for another visual example.
 * Will traverse your object graph an arbitrary number of levels deep.  (i.e. Parent objects with relationships of child objects with relationships of grandchild objects, etc.)
 
 ## How to Use
-1. Add the DNXMLParseOperation header and implementation files to your project.  (You can find them in the sample app.)
+Add the DNXMLParseOperation header and implementation files to your project.  (You can find them in the sample app.)
 
-2. To start parsing:
+### 1. To start parsing:
     
     NSData *xmlData = // load the xml file via a method of your choice
 
@@ -61,11 +61,11 @@ View the "Schema_Illustration.pdf" for another visual example.
                                                object:nil];
     [parseQue addOperation:parser];
 
-3. To cancel/abort parsing:
+### 2. To cancel/abort parsing:
 
     [parser cancel];
 
-4. IMPORTANT, to save parsed objects to your Core Data store: 
+### 3. IMPORTANT, to save parsed objects to your Core Data store: 
 
     // Invoked by observing "NSManagedObjectContextDidSaveNotification" from our Parse Operation
     - (void)mergeChanges:(NSNotification *)notification {
@@ -97,7 +97,7 @@ View the "Schema_Illustration.pdf" for another visual example.
         [self.tableView reloadData];
     }
 
-5. Optional (but recommended), implement a method to handle notification `kParseOperationErrorNotif` 
+### 4. Optional (but recommended), implement a method to handle notification `kParseOperationErrorNotif` 
 
     -(void)handleParseError:(NSNotification *)notification {
         NSError *parseError = [[notification userInfo] objectForKey:kParseOperationMsgErrorKey];
