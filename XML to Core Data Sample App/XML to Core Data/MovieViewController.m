@@ -50,6 +50,7 @@
 
 -(IBAction)eraseAllData:(id)sender {
     [self.appDelegate eraseAllData];
+    [self reloadTableView];
 }
 
 #pragma mark -
@@ -99,6 +100,10 @@
 	NSManagedObjectContext *mainContext = [self managedObjectContext];
 	[mainContext mergeChangesFromContextDidSaveNotification:notification];
     
+    [self reloadTableView];
+}
+
+- (void)reloadTableView {
     // Force the fetchedResultsController to reload, then force the table view to reload.
     self.fetchedResultsController = nil;
     [self fetchedResultsController];
