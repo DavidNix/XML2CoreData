@@ -30,4 +30,6 @@
 @property (strong, readonly) NSManagedObjectModel *managedObjectModel;
 @property (strong, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
+-(void)eraseAllData;
+
 @end

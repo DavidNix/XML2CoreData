@@ -48,6 +48,10 @@
     dest.selectedMovie = [self.fetchedResultsController objectAtIndexPath:indexPath];
 }
 
+-(IBAction)eraseAllData:(id)sender {
+    [self.appDelegate eraseAllData];
+}
+
 #pragma mark -
 #pragma mark Parse Operation
 -(IBAction)startXMLParseOperation:(id)sender {
