@@ -58,4 +58,116 @@
 			</Character>
         </characters>
     </Movie>
+    <Movie>
+		<title>Star Wars Episode 4</title>
+		<starActor>Harrison Ford</starActor>
+		<characters>
+			<Character>
+				<characterName>Luke Skywalker</characterName>
+                <characterNotes>
+                    <CharacterNote>
+                        <noteDescription>Son of Darth Vader.  But, ssssh, don't tell him that yet.</noteDescription>
+                    </CharacterNote>
+                    <CharacterNote>
+                        <noteDescription>The chosen one.</noteDescription>
+                    </CharacterNote>
+                    <CharacterNote>
+                        <noteDescription>Raised by his aunt and uncle on Tatooine.</noteDescription>
+                    </CharacterNote>
+                </characterNotes>
+			</Character>
+			<Character>
+				<characterName>Darth Vader</characterName>
+                <characterNotes>
+                    <CharacterNote>
+                        <noteDescription>The best villain of all time.</noteDescription>
+                    </CharacterNote>
+                </characterNotes>
+			</Character>
+            <Character>
+				<characterName>Han Solo</characterName>
+                <characterNotes>
+                    <CharacterNote>
+                        <noteDescription>He definitely shoots first.</noteDescription>
+                    </CharacterNote>
+                    <CharacterNote>
+                        <noteDescription>Smuggler working for Jaba the Hutt.  Owes him lots of dough.</noteDescription>
+                    </CharacterNote>
+                </characterNotes>
+			</Character>
+            <Character>
+				<characterName>Princess Leia</characterName>
+                <characterNotes>
+                    <CharacterNote>
+                        <noteDescription>Looks great in a slave outfit.</noteDescription>
+                    </CharacterNote>
+                    <CharacterNote>
+                        <noteDescription>Luke's sister.</noteDescription>
+                    </CharacterNote>
+                    <CharacterNote>
+                        <noteDescription>Stubbon but confident.  Likes the insult scruffy lookin' nerf herder</noteDescription>
+                    </CharacterNote>
+                </characterNotes>
+			</Character>
+        </characters>
+    </Movie>
+    <Movie>
+		<title>Face Off</title>
+		<starActor>Nicolas Cage, who else?</starActor>
+		<characters>
+			<Character>
+				<characterName>Polyx Troy</characterName>
+                <characterNotes>
+                    <CharacterNote>
+                        <noteDescription>Imprisoned brother of Caster.  Terrorist.</noteDescription>
+                    </CharacterNote>
+                </characterNotes>
+			</Character>
+			<Character>
+				<characterName>Caster Troy</characterName>
+                <characterNotes>
+                    <CharacterNote>
+                        <noteDescription>Terrorist.  Likes to steal people's faces.</noteDescription>
+                    </CharacterNote>
+                </characterNotes>
+			</Character>
+        </characters>
+    </Movie>
+    <Movie>
+		<title>Braveheart</title>
+		<starActor>Mel Gibson</starActor>
+		<characters>
+			<Character>
+				<characterName>William Wallace</characterName>
+                <characterNotes>
+                    <CharacterNote>
+                        <noteDescription>Do NOT kill his wife.  Or he will reign great vengenance upon you.</noteDescription>
+                    </CharacterNote>
+                    <CharacterNote>
+                        <noteDescription>Leads a great revolution, and impregnates the king's daughter.</noteDescription>
+                    </CharacterNote>
+                    <CharacterNote>
+                        <noteDescription>Talks real funny.</noteDescription>
+                    </CharacterNote>
+                    <CharacterNote>
+                        <noteDescription>A true Scottsman with a true kilt.</noteDescription>
+                    </CharacterNote>
+                    <CharacterNote>
+                        <noteDescription>FREEDOM!!!!!</noteDescription>
+                    </CharacterNote>
+                    <CharacterNote>
+                        <noteDescription>Honestly, the crazy Irishman is the best character in this movie.</noteDescription>
+                    </CharacterNote>
+                </characterNotes>
+			</Character>
+            <Character>
+				<characterName>Crazy Irishman</characterName>
+                <characterNotes>
+                    <CharacterNote>
+                        <noteDescription>Best character in the movie.</noteDescription>
+                    </CharacterNote>
+                </characterNotes>
+			</Character>
+        </characters>
+    </Movie>
 </Movies>
